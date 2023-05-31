@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  /* primary colors */
+  --primary-light-red: 0, 100%, 67%;
+  --primary-orangey-yellow: 39, 100%, 56%;
+  --primary-green-teal: 166, 100%, 37%;
+  --primary-cobalt-blue: 234, 85%, 45%;
+
+  /* neutral colors */
+  --neutral-white: 0, 0%, 100%;
+  --neutral-pale-blue: 221, 100%, 96%;
+  --neutral-light-lavender: 241, 100%, 89%;
+  --neutral-dark-gray-blue: 224, 30%, 27%;
+
+  /* gradients */
+  --primary-gradient-light: 252, 100%, 67%;
+  --primary-gradient-dark: 241, 81%, 54%;
+  --secondary-gradient-circle-light: 256, 72%, 46%;
+  --secondary-gradient-circle-dark: 241, 72%, 46%;
+
+  --font-family-default: "Hanken Grotesk", sans-serif;
+
+  --fs-400: 1.125rem; /* 18px */
+  --fs-400: 1.25rem; /* 20px */
+  --fs-500: 1.5rem; /* 24px */
+  --fs-600: 1.75rem; /* 28px */
+  --fs-900: 5rem; /* 80px */
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-black: 800;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
+}
+
+body {
+  font-family: var(--font-family-default);
+  color: var(--neutral-dark-gray-blue);
+  display: grid;
+  place-items: center;
+}
+
+.grid-col {
+  display: grid;
+  align-content: start;
+  gap: 2rem;
+}
+
+.col-title {
+  font-size: var(--fs-500);
+}
+
+.result-summary {
+  --border-radius: 2rem;
+  --padding: 2.5rem;
+
+  display: grid;
+  max-width: 45rem;
+}
+
+.result {
+  font-weight: var(--fw-bold);
+  text-align: center;
+  background: linear-gradient(
+    hsl(var(--primary-gradient-light)),
+    hsl(var(--primary-gradient-dark))
+  );
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  padding: var(--padding) calc(var(--padding) * 1.2);
+  color: hsl(var(--neutral-white), 0.7);
+}
+
+.result-points {
+  color: hsl(var(--neutral-light-lavender), 0.5);
+  font-weight: var(--fw-black);
+  display: grid;
+  place-content: center;
+  width: 12rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin-inline: auto;
+  background: linear-gradient(
+    hsl(var(--secondary-gradient-circle-dark), 1),
+    hsl(var(--secondary-gradient-circle-light), 0)
+  );
+}
+
+.result-points span {
+  font-size: var(--fs-900);
+  color: hsl(var(--neutral-white));
+}
+
+.result-description {
+  display: grid;
+  gap: 1rem;
+}
+
+.description-title {
+  color: hsl(var(--neutral-white));
+  font-size: var(--fs-600);
+}
+
+.summary {
+  padding: var(--padding);
+  font-weight: var(--fw-bold);
+}
+
+.summary .grid-col {
+  gap: 1rem;
+}
+
+.summary-item,
+.summary-title {
+  display: flex;
+}
+
+.summary-title {
+  gap: 1rem;
+  color: hsl(var(--item-color));
+}
+
+.summary-score {
+  color: hsl(var(--neutral-dark-gray-blue));
+}
+
+.summary-item:nth-child(1) {
+  --item-color: var(--primary-light-red);
+}
+.summary-item:nth-child(2) {
+  --item-color: var(--primary-orangey-yellow);
+}
+.summary-item:nth-child(3) {
+  --item-color: var(--primary-green-teal);
+}
+.summary-item:nth-child(4) {
+  --item-color: var(--primary-cobalt-blue);
+}
+
+.summary-item {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  color: hsl(var(--neutral-dark-gray-blue), 0.5);
+  background: hsl(var(--item-color), 0.1);
+  font-size: var(--fs-400);
+}
+
+button {
+  background: hsl(var(--neutral-dark-gray-blue));
+  padding: 1rem 2rem;
+  color: hsl(var(--neutral-white));
+  border: 0;
+  border-radius: 5rem;
+  cursor: pointer;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+}
+
+button:hover {
+  background: linear-gradient(
+    hsl(var(--primary-gradient-light)),
+    hsl(var(--primary-gradient-dark))
+  );
+}
+
+@media (min-width: 600px) {
+  body {
+    min-height: 100vh;
+    place-content: center;
+  }
+  .result-summary {
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0.5rem 1rem 3rem hsl(var(--neutral-dark-gray-blue), 0.2);
+  }
+  .result {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: var(--padding) calc(var(--padding) * 1.5);
+  }
+}
