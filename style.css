@@ -161,7 +161,6 @@ button {
   color: hsl(var(--neutral-white));
   border: 0;
   border-radius: 5rem;
-  cursor: pointer;
   font-size: var(--fs-400);
   font-weight: var(--fw-regular);
 }
@@ -187,5 +186,9 @@ button:hover {
   .result {
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     padding: var(--padding) calc(var(--padding) * 1.5);
+  }
+
+  button {
+    cursor: pointer;
   }
 }
