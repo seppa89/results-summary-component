@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live Preview](https://seppa89.github.io/Results-summary-component/)
+- Live Site URL: [Live Preview](https://seppa89.github.io/results-summary-component/)
 
 ## My process
 
